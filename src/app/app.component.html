@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand"
+       routerLink="/welcome">{{title}}</a>
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item">
+        <a class="nav-link"
+           routerLink="/welcome"
+           routerLinkActive="active"
+           ariaCurrentWhenActive="page">
+          Inicio
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"
+           routerLink="/products"
+           routerLinkActive="active"
+           ariaCurrentWhenActive="page"
+           [routerLinkActiveOptions]="{exact: true}">
+          Productos
+        </a>
+      </li>
+    </ul>
+    <div class="navbar-nav ms-auto">
+      @if(user) {
+      <a class="nav-link"
+         routerLink="/user/profile"
+         routerLinkActive="active"
+         ariaCurrentWhenActive="page">
+        <i class="bi bi-person-circle"></i>
+        {{user}}
+      </a>
+      } @else {
+      <a class="nav-link"
+         routerLinkActive="active"
+         ariaCurrentWhenActive="page"
+         routerLink="/user/login">
+        <i class="bi bi-box-arrow-in-right"></i>
+        Login
+      </a>
+      }
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,24 @@
+@if (username) {
+<div class="card">
+  <div class="card-header">
+    Perfil de usuario
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">👋 Hola {{ username }}</h5>
+    <p class="card-text">Welcome back!</p>
+    <div class="text-end">
+    <a class="btn btn-warning" href="#" (click)="logout($event)">
+      <i class="bi bi-box-arrow-left"></i>
+      Cerrar sesión
+    </a>
+  </div>
+  </div>
+</div>
+} @else {
+<div class="card">
+  <div class="spinner-border"
+       role="status">
+    <span class="visually-hidden">Cargando...</span>
+  </div>
+</div>
+}
